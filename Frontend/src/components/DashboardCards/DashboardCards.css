@@ -1,0 +1,33 @@
+.dashboard-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.dashboard-container Row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.custom-card {
+  max-width: 40%;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.custom-card .card-text {
+  font-size: 2rem;
+  color: #007bff;
+}

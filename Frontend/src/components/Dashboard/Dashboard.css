@@ -1,0 +1,10 @@
+/* src/styles/Dashboard.css */
+.dashboard-layout {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+  }
+  

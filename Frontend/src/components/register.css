@@ -1,0 +1,248 @@
+/* ===== Main Container ===== */
+.register-container {
+    width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    padding-right: 40px;
+    background-color: #F9FAFB;
+    border-radius: 16px;
+    color: #1F2937;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+    border: 1px solid rgba(31, 41, 55, 0.05);
+    transition: all 0.3s ease;
+}
+
+.register-container:hover {
+    box-shadow: 0 12px 28px rgba(31, 41, 55, 0.12);
+}
+
+/* ===== Form Heading ===== */
+.form-heading {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #1F2937;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.form-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #1F2937, #1F2937);
+    border-radius: 3px;
+}
+
+/* ===== Toggle Role Buttons ===== */
+.toggle-role {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.toggle-role button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background-color: #E5E7EB;
+    color: #F9FAFB;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.toggle-role .active {
+    background: linear-gradient(135deg, #1F2937, #1F2937);
+    color: white;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* ===== Form Inputs ===== */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-row label {
+    flex-basis: 100%;
+}
+
+.register-form label {
+    font-weight: 600;
+    color: #1F2937;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid #E5E7EB;
+    background-color: white;
+    color: #1F2937;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    min-width: 0;
+}
+
+.register-form input:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+.register-form input::placeholder {
+    color: #9CA3AF;
+    font-weight: 400;
+}
+
+.required {
+    color: #EF4444;
+    margin-left: 3px;
+}
+
+
+
+/* ===== Checkbox ===== */
+.checkbox-container {
+    margin: 10px 0;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    color: #6B7280;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+    accent-color: #3B82F6;
+}
+
+/* ===== Buttons ===== */
+.submit-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #1F2937, #1F2937);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #1F2937, #1F2937);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.25);
+}
+
+/* ===== Links ===== */
+.signin-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #6B7280;
+    font-size: 0.85rem;
+}
+
+.link-text {
+    color: #3B82F6;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.link-text:hover {
+    color: #2563EB;
+    text-decoration: underline;
+}
+
+.forgot-container {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.forgot-link {
+    color: #6B7280;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+
+/* ===== Google Button ===== */
+.google-signin-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #F9FAFB;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.google-signin-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #D1D5DB;
+}
+
+.google-signin-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .register-container {
+        width: 90%;
+        padding: 30px;
+        margin: 30px auto;
+    }
+
+    .form-heading {
+        font-size: 1.4rem;
+    }
+}

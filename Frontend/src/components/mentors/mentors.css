@@ -1,0 +1,239 @@
+/* ===== Mentor Page Container ===== */
+.mentors-container {
+  padding: 30px;
+  background-color: #F9FAFB;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+.mentors-container h2{
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+/* ===== Mentor Card Styling ===== */
+.card {
+  border: none;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(31, 41, 55, 0.08);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1F2937, #6366F1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(31, 41, 55, 0.15);
+}
+
+/* ===== Card Layout ===== */
+.mentors-container .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .mentors-container .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Mentor Name and Field ===== */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6B7280;
+  margin-bottom: 16px;
+}
+
+/* ===== Card Body ===== */
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ===== Availability Status ===== */
+.card-text {
+  margin-bottom: 20px;
+  background-color: #F9FAFB;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.card-text strong {
+  color: #1F2937;
+  font-weight: 600;
+}
+
+.text-success {
+  color: #10B981 !important;
+  font-weight: 600;
+}
+
+.text-danger {
+  color: #EF4444 !important;
+  font-weight: 600;
+}
+
+/* ===== Schedule Meeting Button ===== */
+.card .btn-primary {
+  margin-top: auto;
+  width: 100%;
+  background: linear-gradient(135deg, #1F2937, #1F2937);
+  border: none;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.15);
+}
+
+.card .btn-primary:hover {
+  background: linear-gradient(135deg, #1F2937, #1F2937);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* ===== Modal Styling ===== */
+.modal-header {
+  background-color: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 20px 24px;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #1F2937;
+}
+
+.modal-body {
+  padding: 24px;
+  background-color: #F9FAFB;
+}
+
+.modal-body .form-group {
+  margin-bottom: 20px;
+}
+
+.modal-body .form-label {
+  font-weight: 500;
+  color: #1F2937;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.modal-body .form-control {
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+  background-color: #F9FAFB;
+}
+
+.modal-body .form-control:focus {
+  border-color: #1F2937;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.modal-footer {
+  border-top: 1px solid #E5E7EB;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #F9FAFB;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.modal-footer .btn {
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  min-width: 100px;
+  transition: all 0.3s ease;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #E5E7EB;
+  color: #F9FAFB;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #D1D5DB;
+}
+
+.modal-footer .btn-success {
+  background: linear-gradient(135deg, #10B981, #059669);
+  border: none;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.15);
+}
+
+.modal-footer .btn-success:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.2);
+}
+
+/* ===== Success Modal ===== */
+.modal.show .modal-dialog {
+  transform: none;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(31, 41, 55, 0.15);
+}
+
+/* ===== Copy Link Button ===== */
+.btn-outline-primary {
+  border-color: #1F2937;
+  color: #F9FAFB;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #1F2937;
+  color: #F9FAFB;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (min-width: 992px) {
+  .mentors-container {
+    padding: 40px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+}

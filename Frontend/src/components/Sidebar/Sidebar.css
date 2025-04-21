@@ -1,0 +1,91 @@
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  /* Increased width for a cleaner look */
+  background-color: #1F2937;
+  height: 100vh;
+  padding-top: 1rem;
+  border-right: 1px solid #dee2e6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  /* Ensure vertical layout */
+}
+
+.sidebar ul {
+  background-color: #1F2937;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* Stack items vertically */
+}
+
+.sidebar li {
+  background-color: #1F2937;
+  color: #F9FAFB;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* .sidebar li:hover {
+  background-color: #F9FAFB;
+  color: #1F2937;
+} */
+
+.sidebar li.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.sidebar li svg {
+  margin-right: 10px;
+  background-color: #1F2937;
+}
+.sidebar li:hover,
+.sidebar li svg:hover{
+  background-color: #F9FAFB;
+  color: #1F2937;
+}
+/* Main Content Styles */
+.main-content {
+  margin-left: 250px;
+  padding: 1rem;
+  transition: margin-left 0.3s ease;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    /* Make sidebar full width on small screens */
+    height: auto;
+    position: relative;
+    border-right: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar ul {
+    flex-direction: column;
+    /* Ensure it's still a vertical list */
+  }
+
+  .sidebar li {
+    flex: 0 0 auto;
+    padding-left: 1rem;
+    /* Reduce padding for smaller screens */
+  }
+}
