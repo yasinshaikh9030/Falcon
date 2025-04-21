@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Import Components
 import Register from "./components/Register";
-import Homepage from './components/Homepage.jsx';
+import Homepage from "./components/Homepage";
 
 import Dashboard from "./components/Dashboard/Dashboard";
 import UploadPitch from "./components/UploadPitch/UploadPitch";
