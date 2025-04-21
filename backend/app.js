@@ -14,7 +14,7 @@ config({ path: "./config/config.env" });
 app.use(
   cors({
     origin: [
-      "https://falcon-m444zs3hl-yasins-projects-a11b7714.vercel.app/",
+      "https://falcon-liart-three.vercel.app/",
       "http://localhost:5173/",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
