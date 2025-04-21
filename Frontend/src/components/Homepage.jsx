@@ -78,9 +78,9 @@ const Homepage = () => {
     if (!feedback) return;
 
     try {
-      await axios.post(`https://falcon-backend-ochre.vercel.app/`, { text: feedback });
+      await axios.post(`http://localhost:4000/api/feedback/${pitchId}`, { text: feedback });
       alert("✅ Feedback submitted!");
-      const updated = await axios.get(`https://falcon-backend-ochre.vercel.app/`);
+      const updated = await axios.get(`http://localhost:4000/api/feedback/${pitchId}`);
       setAllFeedback((prev) => ({ ...prev, [pitchId]: updated.data }));
     } catch (error) {
       console.error("Error submitting feedback:", error);
