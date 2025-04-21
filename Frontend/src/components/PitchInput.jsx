@@ -29,7 +29,7 @@ function PitchInput() {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:4000/api/pitches', formData);
+            const response = await axios.post('https://falcon-backend-ochre.vercel.app/api/pitches', formData);
 
             if (response.status === 201) {
                 alert('Pitch submitted successfully!');
