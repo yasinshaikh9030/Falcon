@@ -17,7 +17,7 @@ const Homepage = () => {
 
   const fetchPitches = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/pitches");
+      const res = await axios.get("https://falcon-backend-ochre.vercel.app/");
       setPitches(res.data);
       setFilteredPitches(res.data);
       fetchAllFeedback(res.data);

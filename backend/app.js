@@ -13,7 +13,10 @@ config({ path: "./config/config.env" });
 // Enable CORS for the frontend (localhost:5173)
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "https://falcon-m444zs3hl-yasins-projects-a11b7714.vercel.app/",
+      "http://localhost:5173/",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
