@@ -31,7 +31,7 @@ const Homepage = () => {
     const feedbackMap = {};
     for (const pitch of pitchesData) {
       try {
-        const res = await axios.get(`http://localhost:4000/api/feedback/${pitch._id}`);
+        const res = await axios.get(`https://falcon-backend-ochre.vercel.app/`);
         feedbackMap[pitch._id] = res.data;
       } catch (error) {
         console.error(`Error fetching feedback for ${pitch._id}:`, error);
@@ -49,7 +49,7 @@ const Homepage = () => {
     }
 
     try {
-      const res = await axios.get(`http://localhost:4000/api/search?name=${trimmed}`);
+      const res = await axios.get(`https://falcon-backend-ochre.vercel.app/`);
       if (Array.isArray(res.data) && res.data.length > 0) {
         setFilteredPitches(res.data);
         fetchAllFeedback(res.data);
@@ -65,7 +65,7 @@ const Homepage = () => {
 
   const handleLike = async (pitchId) => {
     try {
-      await axios.post(`http://localhost:4000/api/like/${pitchId}`);
+      await axios.post(`https://falcon-backend-ochre.vercel.app/`);
       alert("✅ Liked!");
     } catch (error) {
       console.error("Error liking the pitch:", error);
@@ -78,9 +78,9 @@ const Homepage = () => {
     if (!feedback) return;
 
     try {
-      await axios.post(`http://localhost:4000/api/feedback/${pitchId}`, { text: feedback });
+      await axios.post(`https://falcon-backend-ochre.vercel.app/`, { text: feedback });
       alert("✅ Feedback submitted!");
-      const updated = await axios.get(`http://localhost:4000/api/feedback/${pitchId}`);
+      const updated = await axios.get(`https://falcon-backend-ochre.vercel.app/`);
       setAllFeedback((prev) => ({ ...prev, [pitchId]: updated.data }));
     } catch (error) {
       console.error("Error submitting feedback:", error);
