@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import axios from "axios";
-import backendBaseURL from "../utils/apiBase";
+import backendBaseURL from "../../utils/apiBase";
+
 
 const FeedbackSection = () => {
   const [feedback, setFeedback] = useState([]);
