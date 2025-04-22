@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./homepage.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import backendBaseURL from "../utils/apiBase";
 
 const Homepage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,7 +18,7 @@ const Homepage = () => {
 
   const fetchPitches = async () => {
     try {
-      const res = await axios.get("https://falcon-backend-ochre.vercel.app/api/pitches");
+      const res = await axios.get(`${backendBaseURL}/api/pitches`);
       setPitches(res.data);
       setFilteredPitches(res.data);
       fetchAllFeedback(res.data);
@@ -31,7 +32,7 @@ const Homepage = () => {
     const feedbackMap = {};
     for (const pitch of pitchesData) {
       try {
-        const res = await axios.get(`https://falcon-backend-ochre.vercel.app/api/feedback/${pitch._id}`);
+        const res = await axios.get(`${backendBaseURL}/api/feedback/${pitch._id}`);
         feedbackMap[pitch._id] = res.data;
       } catch (error) {
         console.error(`Error fetching feedback for ${pitch._id}:`, error);
@@ -49,7 +50,7 @@ const Homepage = () => {
     }
 
     try {
-      const res = await axios.get(`https://falcon-backend-ochre.vercel.app/api/search?name=${trimmed}`);
+      const res = await axios.get(`${backendBaseURL}/api/search?name=${trimmed}`);
       if (Array.isArray(res.data) && res.data.length > 0) {
         setFilteredPitches(res.data);
         fetchAllFeedback(res.data);
@@ -65,7 +66,7 @@ const Homepage = () => {
 
   const handleLike = async (pitchId) => {
     try {
-      await axios.post(`https://falcon-backend-ochre.vercel.app/api/like/${pitchId}`);
+      await axios.post(`${backendBaseURL}/api/like/${pitchId}`);
       alert("✅ Liked!");
     } catch (error) {
       console.error("Error liking the pitch:", error);
@@ -78,9 +79,9 @@ const Homepage = () => {
     if (!feedback) return;
 
     try {
-      await axios.post(`https://falcon-backend-ochre.vercel.app/api/feedback/${pitchId}`, { text: feedback });
+      await axios.post(`${backendBaseURL}/api/feedback/${pitchId}`, { text: feedback });
       alert("✅ Feedback submitted!");
-      const updated = await axios.get(`https://falcon-backend-ochre.vercel.app/api/feedback/${pitchId}`);
+      const updated = await axios.get(`${backendBaseURL}/api/feedback/${pitchId}`);
       setAllFeedback((prev) => ({ ...prev, [pitchId]: updated.data }));
     } catch (error) {
       console.error("Error submitting feedback:", error);

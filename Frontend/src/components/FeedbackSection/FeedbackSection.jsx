@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import axios from "axios";
+import backendBaseURL from "../utils/apiBase";
 
 const FeedbackSection = () => {
   const [feedback, setFeedback] = useState([]);
@@ -10,7 +11,7 @@ const FeedbackSection = () => {
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
-        const response = await axios.get("https://falcon-backend-ochre.vercel.app/api/feedback");
+        const response = await axios.get(`${backendBaseURL}/api/feedback`);
         setFeedback(response.data);
       } catch (error) {
         console.error("Error fetching feedback:", error);

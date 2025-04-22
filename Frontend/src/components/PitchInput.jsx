@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './Pich_input.css';
 import axios from 'axios';
+import backendBaseURL from "../utils/apiBase";
 
 function PitchInput() {
     const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ function PitchInput() {
         event.preventDefault();
 
         try {
-            const response = await axios.post('https://falcon-backend-ochre.vercel.app/api/pitches', formData);
+            const response = await axios.post(`${backendBaseURL}/pitches`, formData);
 
             if (response.status === 201) {
                 alert('Pitch submitted successfully!');
